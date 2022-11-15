@@ -1,0 +1,52 @@
+Metacharacters:
+
+. - to match any single characters except a newline character
+? - matching the preceeding character either 0 to 1 times of presence
+	Ex:
+		Raj? => Ra , Raj 
+* - match the preceeding character 0 time or n times
+	Ex:
+		Raj* => Ra,Raj,Rajj,Rajjj,Rajjjj,Rajjjjj...........
++ - match the preceeding character 1 time or n times
+	Ex:
+		Raj* => Raj,Rajj,Rajjj,Rajjjj,Rajjjjj...........
+^ -> to match the beginning character
+	Ex:
+		^job => it matchs all the line that starts with job
+$ -> end with
+	Ex:
+		Failure$ => mathes all the line that ends with the word: Failure
+() -> grouping
+	Ex:
+		(Raj)+  =>Raj, RajRaj, RajRajRaj, RajRajRajRaj.........
+[] -> it matches if any of the character mentioned inside [] presents
+	Ex:
+		[aeiou] => a or e or i or i or u 
+		[^aeiou] => All the word that does not contains vowel get matched
+{m,n} => matches if the chracter present min m time and max n time
+	Ex:
+		Raj{2,4} => Rajj , Rajjj, Rajjjj
+		Raj{,4} => Raj, Rajj,Rajjj,Rajjjj
+		Raj{2,} => Rajj,Rajjj,Rajjjj,Rajjjjj.....
+		Raj{2} => Rajj
+|   => or condition
+		Ram|Raj => match if Ram present or Raj presents
+-  => Range operators
+	Ex:
+		[a-z]
+		[A-Z]
+		[0-5]
+		
+Metasequence:
+\d => match any digit [0-9]
+\D => match everything except a number
+\w => matches if word character is present [a-zA-Z0-9_]
+\W => matches everything except a word character 
+\s => matches the space
+\S => matches except a space
+\b => word bundry
+	ex:
+		line="The main street is broad"
+		
+		/\broad\b/
+\B => non word boundry character
